@@ -1,0 +1,30 @@
+---
+import { IconCloudDemo } from "../components/IconCloud";
+import Layout from "../layouts/Layout.astro";
+import Projects from "../sections/Projects.astro";
+---
+
+<Layout title="Mike Balderas">
+  <main class="w-full">
+    <section class="flex items-center w-full justify-between h-[80vh] mb-[5vh]">
+      <div class="w-1/2 flex flex-col items-start">
+        <h1 class="text-6xl font-bold mb-5 animate-entering">👋Hi, I’m Mike</h1>
+        <h2 class="text-2xl font-medium text-neutral-700 mb-10 text-pretty animate-[entering_1s_ease-in-out]">
+          Full Stack Software Engineer. Specialized in multiplatform application
+          development
+        </h2>
+        <a
+          class="text-xl font-bold bg-[#ff0000] animate-[entering_1.5s_ease-in-out] text-white px-10 py-2 rounded-xl hover:scale-110 transition-transform"
+          href="./portfolio/">Browse portflio</a>
+      </div>
+      <div>
+        <IconCloudDemo client:load />
+      </div>
+      
+    </section>
+    <section>
+      <h2 class="text-3xl font-bold mb-10">My portflio</h2>
+      <Projects />
+    </section>
+  </main>
+</Layout>

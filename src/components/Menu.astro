@@ -1,0 +1,41 @@
+---
+const menu = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "About",
+    url: "/about",
+  },
+  {
+    name: "Portfolio",
+    url: "/portfolio",
+  },
+];
+
+const route = Astro.url.pathname;
+---
+
+<header class="flex font-bold justify-between h-[15vh] items-center">
+  <h2 class="text-2xl">Mike Balderas</h2>
+  <nav>
+    <ul class="flex text-xl text-[#ff0000]">
+      {
+        menu.map((item) => {
+          return (
+            <li class="mx-4">
+              <a
+                class={route === item.url ? "underline" : "hover:underline"}
+                href={item.url}
+              >
+                {item.name}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+  <a class="text-xl bg-[#ff0000] text-white px-10 py-1 rounded-xl hover:scale-110 transition-transform" href="/contact">Contact</a>
+</header>

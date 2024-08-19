@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <div class="flex flex-col">
+    <h1 class="text-3xl font-bold mb-5 animate-[entering_.5s_ease-in-out]">Get in touch</h1>
+    <span class="bg-[#ff0000] h-3 w-40 mb-10 animate-[entering_1s_ease-in-out]"
+    ></span>
+  </div>
+  <main class="flex justify-between bg-white rounded-xl border-[#e0e0e0] p-5 animate-[entering_1.5s_ease-in-out]">
+    <section class="w-1/3 bg-[#ff0000] text-white rounded-xl p-5">
+      <h2 class="text-2xl font-bold mb-5">Contact Information</h2>
+      <div class="flex items-center mb-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="25"
+          width="25"
+          viewBox="0 0 512 512"
+          class="mr-2"
+          fill="currentColor"
+          ><path
+            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+          ></path></svg
+        >
+        <p>mikebalderassanchez@gmail.com</p>
+      </div>
+      <div class="flex items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="25"
+          width="20"
+          viewBox="0 0 384 512"
+          class="mr-2"
+          fill="currentColor"
+          ><path
+            d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
+          ></path></svg
+        >
+        <p>Querétaro, México</p>
+      </div>
+    </section>
+    <section class="flex flex-col w-2/3 px-20 py-10">
+      <div class="flex mb-5">
+        <div class="flex flex-col-reverse w-1/2 mr-5">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name..."
+            class="bg-transparent border-b-2 border-gray-400 outline-none focus:border-[#ff0000] peer"
+          />
+          <label
+            for="name"
+            class="text-base font-semibold text-gray-600 peer-focus:text-[#ff0000] mb-2"
+            >Your name</label
+          >
+        </div>
+        <div class="flex flex-col-reverse w-1/2">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email..."
+            class="bg-transparent border-b-2 border-gray-400 outline-none focus:border-[#ff0000] peer"
+          />
+          <label
+            for="email"
+            class="text-base font-semibold text-gray-600 peer-focus:text-[#ff0000] mb-2"
+            >Your email</label
+          >
+        </div>
+      </div>
+      <div class="flex flex-col-reverse mb-5">
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          placeholder="Enter your subject..."
+          class="bg-transparent border-b-2 border-gray-400 outline-none focus:border-[#ff0000] peer"
+        />
+        <label
+          for="subject"
+          class="text-base font-semibold text-gray-600 peer-focus:text-[#ff0000] mb-2"
+          >Subject</label
+        >
+      </div>
+      <div class="flex flex-col-reverse mb-10">
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Write here your message..."
+          class="bg-transparent border-b-2 border-gray-400 outline-none focus:border-[#ff0000] h-20 max-h-20 resize-none peer"
+        ></textarea>
+        <label
+          for="message"
+          class="text-base font-semibold text-gray-600 peer-focus:text-[#ff0000] mb-2"
+          >Your message</label
+        >
+      </div>
+      <button
+        type="submit"
+        class="w-56 font-bold text-xl bg-[#ff0000] text-white px-10 py-1 rounded-xl hover:scale-110 transition-transform"
+        >Send message</button
+      >
+    </section>
+  </main>
+</Layout>
