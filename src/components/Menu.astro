@@ -1,4 +1,6 @@
 ---
+import { BarsIcon, CloseIcon } from "./Icons";
+
 const menu = [
   {
     name: "Home",
@@ -17,14 +19,20 @@ const menu = [
 const route = Astro.url.pathname;
 ---
 
+
 <header class="flex font-bold justify-between h-[15vh] items-center">
   <h2 class="text-2xl">Mike Balderas</h2>
-  <nav>
-    <ul class="flex text-xl text-[#ff0000]">
+  <nav class= "fixed flex top-0 left-0 opacity-0 md:relative -z-10 md:bg-transparent bg-black bg-opacity-80 w-full h-full justify-center items-center md:w-1/2 md:flex md:opacity-100 md:z-0">
+    <ul class="flex flex-col justify-center items-center text-xl text-white md:text-[#ff0000] md:flex-row">
+      <li class="flex mb-10 md:hidden">
+        <button id="closeMenu">
+          <CloseIcon size={25} color="#fff" />
+        </button>
+      </li>
       {
         menu.map((item) => {
           return (
-            <li class="mx-4">
+            <li class="mx-4 mb-10 text-2xl md:mb-0 md:text-xl">
               <a
                 class={route === item.url ? "underline" : "hover:underline"}
                 href={item.url}
@@ -35,7 +43,37 @@ const route = Astro.url.pathname;
           );
         })
       }
+      <li class="md:hidden">
+        <a class="text-xl bg-[#ff0000] text-white px-10 py-1 rounded-xl hover:scale-110 transition-transform" href="/contact">Contact</a>
+      </li>
     </ul>
   </nav>
-  <a class="text-xl bg-[#ff0000] text-white px-10 py-1 rounded-xl hover:scale-110 transition-transform" href="/contact">Contact</a>
+  <button id="openMenu" class="md:hidden flex">
+    <BarsIcon size={25} /> 
+  </button>
+  <a class="hidden text-xl bg-[#ff0000] text-white px-10 py-1 rounded-xl hover:scale-110 transition-transform md:flex" href="/contact">Contact</a>
 </header>
+
+<script>
+  const openMenu = document.getElementById("openMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const nav = document.querySelector("nav");
+
+  openMenu?.addEventListener("click", () => {
+    nav?.classList.remove("-z-10");
+    nav?.classList.add("z-10");
+    nav?.classList.add("opacity-100");
+  });
+
+  closeMenu?.addEventListener("click", () => {
+    nav?.classList.remove("opacity-100");
+    nav?.classList.remove("z-10");
+    nav?.classList.add("-z-10");
+  });
+</script>
+
+<style>
+  nav{
+    transition: opacity 0.3s ease-in-out;
+  }
+</style>

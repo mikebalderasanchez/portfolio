@@ -15,7 +15,6 @@ const slugs = [
   "visualstudiocode",
   "androidstudio",
   "figma",
-  "mongodb"
 ];
 
 export function IconCloudDemo() {

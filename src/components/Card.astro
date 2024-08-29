@@ -2,9 +2,9 @@
 const { color, title, id } = Astro.props;
 ---
 
-<a href={`/portfolio/${id}`} class={`w-full mr-10 animate-[entering_${id}s_ease-in-out]`}>
-  <article class="group w-full h-[400px] mr-10 mb-10 hover:scale-105 transition-transform cursor-pointer">
-  <div class={`bg-[${color}] w-full h-[300px] rounded-t-lg flex justify-center items-center`}>
+<a href={`/portfolio/${id}`} class={`w-full mr-0 animate-[entering_${id}s_ease-in-out] md:mr-10`}>
+  <article class="group w-full h-[300px] mr-0 mb-8 md:mr-10 md:mb-10 hover:scale-105 transition-transform cursor-pointer md:h-[400px]">
+  <div class={`bg-[${color}] w-full h-[200px] rounded-t-lg flex justify-center items-center md:h-[300px]`}>
     <img src=`/images/projects/${id}.png` alt="" srcset="" height="150" width="150">
   </div>
   <footer class="bg-[#fff] h-[100px] flex flex-col justify-center pl-8 rounded-b-lg">
