@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <main className="relative w-full">
-      <div className="animate-fade-in mx-auto mt-24 mb-4 w-full p-4 md:w-4xl md:px-4 md:py-8">
+      <div className="animate-fade-in mx-auto mt-12 md:mt-24 mb-4 w-full p-4 md:w-4xl md:px-4 md:py-8">
         <section className="md:px-4">
           <div className="mb-5 flex flex-col items-start justify-between md:mb-10 md:flex-row">
             <Title>Software Engineer</Title>
@@ -49,7 +49,7 @@ export default function Home() {
                 alt="Image profile"
                 width={200}
                 height={200}
-                className="w-full rounded-4xl border-8 border-neutral-200 object-cover md:w-auto"
+                className="rounded-4xl border-8 border-neutral-200 object-cover md:size-64 size-64"
               />
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function Home() {
           </div>
           <AnimatedTestimonials testimonials={projects} autoplay />
         </Section>
-        <Section>
+        {/*<Section>
           <div className="flex items-center justify-between">
             <Title>Products</Title>
             <Button variant="outline" asChild>
@@ -76,7 +76,7 @@ export default function Home() {
             </Button>
           </div>
           <Carousel items={cards} />
-        </Section>
+        </Section>*/}
         <Footer />
       </div>
       <Stickers />
