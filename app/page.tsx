@@ -39,8 +39,12 @@ export default function Home() {
                 <br /> multiplatform application development
               </p>
               <div className="mt-6 flex gap-2 md:gap-4">
-                <Button>Contact Me</Button>
-                <Button variant="outline">Resume</Button>
+                <Button asChild>
+                  <Link href="mailto:mikebalderassanchez@gmail.com">Contact Me</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="CV_BalderasMiguelAngel.pdf" download>Resume</Link>
+                </Button>
               </div>
             </div>
             <div>
