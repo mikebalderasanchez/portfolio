@@ -17,9 +17,9 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 1,
-    title: "TI Lead / Fullstack Developer",
+    title: "Fullstack Developer",
     company: "DHISA Industrial Tools Distributor S.A. de C.V.",
-    duration: "2024 - Present",
+    duration: "2024 - 2025",
     description:
       "Overseeing IT operations and leading a team of developers to build and maintain fullstack applications. Implementing best practices for code quality and deployment.",
     skills: ["React", "Node.js", "PostgreSQL", "AWS"],

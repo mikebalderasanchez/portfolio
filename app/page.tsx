@@ -18,9 +18,12 @@ export default function Home() {
 
   return (
     <main className="relative w-full">
-      <div className="animate-fade-in mx-auto mt-12 md:mt-24 mb-4 w-full p-4 md:w-4xl md:px-4 md:py-8">
+      <div className="relative mx-auto max-w-6xl">
+        <Stickers />
+      </div>
+      <div className="animate-fade-in mx-auto mt-16 md:mt-24 mb-4 md:w-4xl w-full p-4 md:px-4 md:py-8">
         <section className="md:px-4">
-          <div className="mb-5 flex flex-col items-start justify-between md:mb-10 md:flex-row">
+          <div className="mb-5 flex flex-col items-start justify-between md:mb-10 md:flex-row gap-2">
             <Title>Software Engineer</Title>
             <div className="ml-auto flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1">
               <span className="size-0 rounded-full bg-emerald-800 md:size-2" />
@@ -83,7 +86,7 @@ export default function Home() {
         </Section>*/}
         <Footer />
       </div>
-      <Stickers />
+
     </main>
   );
 }

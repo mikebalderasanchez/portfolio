@@ -9,11 +9,14 @@ import Link from "next/link";
 export default function Projects() {
   return (
     <main className="relative w-full">
-      <div className="animate-fade-in mx-auto mt-24 mb-4 w-full rounded-2xl p-6 md:w-4xl md:px-4 md:py-8">
+      <div className="relative mx-auto max-w-6xl">
+        <Stickers />
+      </div>
+      <div className="animate-fade-in mx-auto mt-24 mb-4 w-full rounded-2xl p-6 md:w-4xl">
         <div className="md:px-8">
           <Title>My projects</Title>
         </div>
-        <section className="mt-8 grid grid-cols-2 gap-4 px-8">
+        <section className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 px-0 md:px-8">
           {projects.map((project) => (
             <Link href={`/projects/${project.id}`} key={project.name}>
               <Card className="gap-2 overflow-hidden bg-transparent p-0 transition-transform hover:scale-105">
@@ -41,7 +44,6 @@ export default function Projects() {
         </section>
         <Footer />
       </div>
-      <Stickers />
     </main>
   );
 }

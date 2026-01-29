@@ -9,6 +9,7 @@ export const projects: {
   src: string;
   color: string;
   techs: ReactNode[];
+  github: string;
 }[] = [
   {
     id: "plannify",
@@ -19,6 +20,7 @@ export const projects: {
     src: "/projects/plannify.png",
     color: "bg-[#000080]",
     techs: [<ReactLogo key="react" />, <Expo key="expo" />, <TypeScript key="typescript" />, <GoogleCloud key="google-cloud" />],
+    github: "https://github.com/interscode/plannify",
   },
   // {
   //   id: "aaf",
