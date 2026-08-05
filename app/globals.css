@@ -132,6 +132,32 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground antialiased;
+    background-color: #f8f8ff;
+    background-image:
+      radial-gradient(
+        ellipse 90% 60% at 80% -10%,
+        color-mix(in oklab, var(--primary) 12%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at -10% 30%,
+        color-mix(in oklab, var(--primary) 7%, transparent),
+        transparent 50%
+      );
+  }
+  html.dark body {
+    background-color: oklch(0.145 0 0);
+    background-image:
+      radial-gradient(
+        ellipse 90% 60% at 80% -10%,
+        color-mix(in oklab, var(--primary) 16%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at -10% 30%,
+        color-mix(in oklab, var(--primary) 10%, transparent),
+        transparent 50%
+      );
   }
 }

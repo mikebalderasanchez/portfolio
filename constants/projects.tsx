@@ -1,45 +1,169 @@
-import { Expo, GoogleCloud, ReactLogo, TypeScript } from "@/components/langs";
-import { ReactNode } from "react";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
-export const projects: {
-  id: string;
-  quote: string;
+export type ProjectId =
+  | "medly"
+  | "plannify"
+  | "denest"
+  | "fixcore"
+  | "aaf"
+  | "finance";
+
+export type ProjectStatus = "shipped" | "development";
+
+export type ProjectBase = {
+  id: ProjectId;
   name: string;
-  designation: string;
-  src: string;
+  src?: string;
   color: string;
-  techs: ReactNode[];
-  github: string;
-}[] = [
+  techs: string[];
+  status: ProjectStatus;
+  github?: string;
+  url?: string;
+};
+
+export type Project = ProjectBase & {
+  quote: string;
+  designation: string;
+  role: string;
+  highlights: string[];
+};
+
+/** Shared base languages across every project. */
+const CORE = ["TypeScript", "SQL", "Dart"] as const;
+
+export const projectBases: ProjectBase[] = [
+  {
+    id: "medly",
+    name: "Medly",
+    src: "/projects/medly.png",
+    color: "bg-[#2B8FEC]",
+    status: "shipped",
+    techs: [
+      ...CORE,
+      "Next.js",
+      "Vercel",
+      "ElevenLabs",
+      "HonoJS",
+      "Better Auth",
+      "MongoDB",
+    ],
+    url: "https://medly.interscode.com",
+  },
   {
     id: "plannify",
-    quote:
-      "Plannify is an app that simplifies your academic life. Just scan your school schedule and the app will help you manage tasks, projects, and exams, keeping you on track",
     name: "Plannify",
-    designation: "Your school ally in the palm of your hand",
     src: "/projects/plannify.png",
     color: "bg-[#000080]",
-    techs: [<ReactLogo key="react" />, <Expo key="expo" />, <TypeScript key="typescript" />, <GoogleCloud key="google-cloud" />],
+    status: "shipped",
+    techs: [
+      ...CORE,
+      "PostgreSQL",
+      "Better Auth",
+      "Flutter",
+      "HonoJS",
+      "Next.js",
+      "Tailwind CSS",
+      "Zod",
+      "Drizzle ORM",
+      "Cloudflare Workers",
+      "Gemini",
+    ],
     github: "https://github.com/interscode/plannify",
+    url: "https://plannify.app",
   },
-  // {
-  //   id: "aaf",
-  //   quote:
-  //     "Always and Forever is an app designed to preserve your most cherished memories as a couple. It’s the perfect digital space to collect and relive your shared journey, from the smallest moments to the biggest milestones",
-  //   name: "Always and Forever",
-  //   designation: "The storehouse of your love story",
-  //   src: "/projects/aaf.png",
-  //   color: "bg-[#ff0000]",
-  //   techs: [<ReactLogo key="react" />, <Expo key="expo" />, <TypeScript key="typescript" />, <GoogleCloud key="google-cloud" />],
-  // },
-  // {
-  //   id: "finance",
-  //   quote:
-  //     "Keep track of your income, expenses, and card payments in one place. View your due dates, schedule payments, and avoid debt without complications.",
-  //   name: "Finance",
-  //   designation: "The simple way to manage your money",
-  //   src: "/projects/finance.png",
-  //   color: "bg-[#000090]",
-  //   techs: [<ReactLogo key="react" />, <Expo key="expo" />, <TypeScript key="typescript" />, <GoogleCloud key="google-cloud" />],
-  // },
+  {
+    id: "denest",
+    name: "Denest",
+    src: "/projects/denest.png",
+    color: "bg-[#773BFF]",
+    status: "shipped",
+    techs: [
+      ...CORE,
+      "Docker",
+      "Docker Compose",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Next.js",
+    ],
+  },
+  {
+    id: "fixcore",
+    name: "FixCore",
+    src: "/projects/fixcore.png",
+    color: "bg-[#073EE9]",
+    status: "shipped",
+    techs: [
+      ...CORE,
+      "PostgreSQL",
+      "Better Auth",
+      "Flutter",
+      "HonoJS",
+      "Next.js",
+      "Tailwind CSS",
+      "Zod",
+      "Drizzle ORM",
+      "Cloudflare R2",
+      "Cloudflare Workers",
+      "Stripe",
+    ],
+    url: "https://fix.aevocore.com",
+  },
+  {
+    id: "aaf",
+    name: "Always and Forever",
+    src: "/projects/aaf.png",
+    color: "bg-[#ff0000]",
+    status: "development",
+    techs: [
+      ...CORE,
+      "PostgreSQL",
+      "Better Auth",
+      "Flutter",
+      "HonoJS",
+      "Next.js",
+      "Tailwind CSS",
+      "Zod",
+      "Drizzle ORM",
+      "Cloudflare R2",
+      "Cloudflare Workers",
+    ],
+  },
+  {
+    id: "finance",
+    name: "Finance",
+    src: "/projects/finance.png",
+    color: "bg-[#000090]",
+    status: "development",
+    techs: [
+      ...CORE,
+      "PostgreSQL",
+      "Better Auth",
+      "Flutter",
+      "HonoJS",
+      "Next.js",
+      "Tailwind CSS",
+      "Zod",
+      "Drizzle ORM",
+      "Cloudflare Workers",
+    ],
+  },
 ];
+
+export function localizeProjects(dictionary: Dictionary): Project[] {
+  return projectBases.map((base) => ({
+    ...base,
+    ...dictionary.projects[base.id],
+  }));
+}
+
+export function localizeProject(
+  id: string,
+  dictionary: Dictionary,
+): Project | undefined {
+  const base = projectBases.find((p) => p.id === id);
+  if (!base) return undefined;
+  return { ...base, ...dictionary.projects[base.id] };
+}
+
+/** Static list for generateStaticParams */
+export const projects = projectBases;

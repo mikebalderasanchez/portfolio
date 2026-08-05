@@ -656,6 +656,586 @@ const Nextjs = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const Vercel = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 222" preserveAspectRatio="xMidYMid">
+    <path d="m128 0 128 221.705H0z" />
+  </svg>
+);
+
+const BetterAuth = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 500 500">
+    <path fill="#000" d="M0 0h500v500H0z" />
+    <path fill="#fff" d="M69 121h86.988v259H69zM337.575 121H430v259h-92.425z" />
+    <path
+      fill="#fff"
+      d="M427.282 121v83.456h-174.52V121zM430 296.544V380H252.762v-83.456z"
+    />
+    <path fill="#fff" d="M252.762 204.455v92.089h-96.774v-92.089z" />
+  </svg>
+);
+
+const MongoDB = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 120 257">
+    <path
+      fill="#00ED64"
+      d="M82.323 28.55C71.537 15.795 62.249 2.84 60.35.15c-.2-.2-.5-.2-.7 0-1.897 2.69-11.185 15.645-21.971 28.4C-54.902 146.238 52.26 225.661 52.26 225.661l.9.597c.798 12.258 2.795 29.896 2.795 29.896h7.99s1.998-17.539 2.797-29.896l.899-.697c.1 0 107.263-79.323 14.68-197.01ZM59.95 223.867s-4.793-4.086-6.092-6.179v-.199l5.793-128.151c0-.4.6-.4.6 0l5.792 128.151v.199c-1.299 2.093-6.093 6.179-6.093 6.179Z"
+    />
+  </svg>
+);
+
+const PostgreSQL = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} xmlSpace="preserve" viewBox="0 0 432.071 445.383">
+    <g
+      style={{
+        fillRule: "nonzero",
+        clipRule: "nonzero",
+        fill: "none",
+        stroke: "#fff",
+        strokeWidth: "12.4651",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeMiterlimit: "4",
+      }}
+    >
+      <path
+        d="M323.205 324.227c2.833-23.601 1.984-27.062 19.563-23.239l4.463.392c13.517.615 31.199-2.174 41.587-7 22.362-10.376 35.622-27.7 13.572-23.148-50.297 10.376-53.755-6.655-53.755-6.655 53.111-78.803 75.313-178.836 56.149-203.322-52.27-66.789-142.748-35.206-144.262-34.386l-.482.089c-9.938-2.062-21.06-3.294-33.554-3.496-22.761-.374-40.032 5.967-53.133 15.904 0 0-161.408-66.498-153.899 83.628 1.597 31.936 45.777 241.655 98.47 178.31 19.259-23.163 37.871-42.748 37.871-42.748 9.242 6.14 20.307 9.272 31.912 8.147l.897-.765c-.281 2.876-.157 5.689.359 9.019-13.572 15.167-9.584 17.83-36.723 23.416-27.457 5.659-11.326 15.734-.797 18.367 12.768 3.193 42.305 7.716 62.268-20.224l-.795 3.188c5.325 4.26 4.965 30.619 5.72 49.452.756 18.834 2.017 36.409 5.856 46.771 3.839 10.36 8.369 37.05 44.036 29.406 29.809-6.388 52.6-15.582 54.677-101.107"
+        style={{
+          fill: "#000",
+          stroke: "#000",
+          strokeWidth: "37.3953",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
+        }}
+      />
+      <path
+        d="M402.395 271.23c-50.302 10.376-53.76-6.655-53.76-6.655 53.111-78.808 75.313-178.843 56.153-203.326-52.27-66.785-142.752-35.2-144.262-34.38l-.486.087c-9.938-2.063-21.06-3.292-33.56-3.496-22.761-.373-40.026 5.967-53.127 15.902 0 0-161.411-66.495-153.904 83.63 1.597 31.938 45.776 241.657 98.471 178.312 19.26-23.163 37.869-42.748 37.869-42.748 9.243 6.14 20.308 9.272 31.908 8.147l.901-.765c-.28 2.876-.152 5.689.361 9.019-13.575 15.167-9.586 17.83-36.723 23.416-27.459 5.659-11.328 15.734-.796 18.367 12.768 3.193 42.307 7.716 62.266-20.224l-.796 3.188c5.319 4.26 9.054 27.711 8.428 48.969-.626 21.259-1.044 35.854 3.147 47.254 4.191 11.4 8.368 37.05 44.042 29.406 29.809-6.388 45.256-22.942 47.405-50.555 1.525-19.631 4.976-16.729 5.194-34.28l2.768-8.309c3.192-26.611.507-35.196 18.872-31.203l4.463.392c13.517.615 31.208-2.174 41.591-7 22.358-10.376 35.618-27.7 13.573-23.148z"
+        style={{ fill: "#336791", stroke: "none" }}
+        stroke="none"
+      />
+      <path d="M215.866 286.484c-1.385 49.516.348 99.377 5.193 111.495 4.848 12.118 15.223 35.688 50.9 28.045 29.806-6.39 40.651-18.756 45.357-46.051 3.466-20.082 10.148-75.854 11.005-87.281M173.104 38.256S11.583-27.76 19.092 122.365c1.597 31.938 45.779 241.664 98.473 178.316 19.256-23.166 36.671-41.335 36.671-41.335M260.349 26.207c-5.591 1.753 89.848-34.889 144.087 34.417 19.159 24.484-3.043 124.519-56.153 203.329" />
+      <path
+        d="M348.282 263.953s3.461 17.036 53.764 6.653c22.04-4.552 8.776 12.774-13.577 23.155-18.345 8.514-59.474 10.696-60.146-1.069-1.729-30.355 21.647-21.133 19.96-28.739-1.525-6.85-11.979-13.573-18.894-30.338-6.037-14.633-82.796-126.849 21.287-110.183 3.813-.789-27.146-99.002-124.553-100.599-97.385-1.597-94.19 119.762-94.19 119.762"
+        style={{ strokeLinejoin: "bevel" }}
+      />
+      <path d="M188.604 274.334c-13.577 15.166-9.584 17.829-36.723 23.417-27.459 5.66-11.326 15.733-.797 18.365 12.768 3.195 42.307 7.718 62.266-20.229 6.078-8.509-.036-22.086-8.385-25.547-4.034-1.671-9.428-3.765-16.361 3.994z" />
+      <path d="M187.715 274.069c-1.368-8.917 2.93-19.528 7.536-31.942 6.922-18.626 22.893-37.255 10.117-96.339-9.523-44.029-73.396-9.163-73.436-3.193-.039 5.968 2.889 30.26-1.067 58.548-5.162 36.913 23.488 68.132 56.479 64.938" />
+      <path
+        d="M172.517 141.7c-.288 2.039 3.733 7.48 8.976 8.207 5.234.73 9.714-3.522 9.998-5.559.284-2.039-3.732-4.285-8.977-5.015-5.237-.731-9.719.333-9.996 2.367z"
+        style={{
+          fill: "#fff",
+          strokeWidth: "4.155",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
+        }}
+      />
+      <path
+        d="M331.941 137.543c.284 2.039-3.732 7.48-8.976 8.207-5.238.73-9.718-3.522-10.005-5.559-.277-2.039 3.74-4.285 8.979-5.015 5.239-.73 9.718.333 10.002 2.368z"
+        style={{
+          fill: "#fff",
+          strokeWidth: "2.0775",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
+        }}
+      />
+      <path d="M350.676 123.432c.863 15.994-3.445 26.888-3.988 43.914-.804 24.748 11.799 53.074-7.191 81.435" />
+    </g>
+  </svg>
+);
+
+const Flutter = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} preserveAspectRatio="xMidYMid" viewBox="0 0 256 317">
+    <defs>
+      <linearGradient x1="4%" y1="27%" x2="75.9%" y2="52.9%" id="flutter__a">
+        <stop offset="0%" />
+        <stop stopOpacity="0" offset="100%" />
+      </linearGradient>
+    </defs>
+    <path
+      fill="#47C5FB"
+      d="M158 0 0 158l49 48L255 0zM157 145l-85 85 49 50 49-49 85-86z"
+    />
+    <path fill="#00569E" d="m121 280 37 37h97l-85-86z" />
+    <path fill="#00B5F8" d="m72 230 48-48 50 49-49 49z" />
+    <path fillOpacity=".8" fill="url(#flutter__a)" d="m121 280 41-14 4-31z" />
+  </svg>
+);
+
+const TailwindCSS = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 54 33">
+    <g clipPath="url(#tailwindcss__a)">
+      <path
+        fill="#38bdf8"
+        fillRule="evenodd"
+        d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+        clipRule="evenodd"
+      />
+    </g>
+    <defs>
+      <clipPath id="tailwindcss__a">
+        <path fill="#fff" d="M0 0h54v32.4H0z" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+const Zod = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 256 203"
+  >
+    <defs>
+      <filter
+        id="zod__a"
+        width="105.2%"
+        height="106.5%"
+        x="-2.2%"
+        y="-2.8%"
+        filterUnits="objectBoundingBox"
+      >
+        <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+        <feGaussianBlur
+          in="shadowOffsetOuter1"
+          result="shadowBlurOuter1"
+          stdDeviation="2"
+        />
+        <feColorMatrix
+          in="shadowBlurOuter1"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.36 0"
+        />
+      </filter>
+      <path
+        id="zod__b"
+        d="M200.42 0H53.63L0 53.355l121.76 146.624 9.714-10.9L252 53.857 200.42 0Zm-5.362 12.562 39.84 41.6-112.8 126.558L17 54.162l41.815-41.6h136.243Z"
+      />
+    </defs>
+    <path
+      fill="#18253F"
+      d="M60.816 14.033h136.278l39.933 41.69-112.989 126.554L18.957 55.724z"
+    />
+    <path
+      fill="#274D82"
+      d="M151.427 152.386H98.013l-24.124-29.534 68.364-.002.002-4.19h39.078z"
+    />
+    <path
+      fill="#274D82"
+      d="m225.56 43.834-147.382 85.09-19.226-24.051 114.099-65.877-2.096-3.631 30.391-17.546zM146.596 14.075 35.93 77.968 18.719 56.483l74.095-42.78z"
+    />
+    <g transform="translate(2 1.51)">
+      <use xlinkHref="#zod__b" filter="url(#zod__a)" />
+      <use xlinkHref="#zod__b" fill="#3068B7" />
+    </g>
+  </svg>
+);
+
+const DrizzleORM = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="0 0 160 160">
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#121212"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 43.48 67.304)"
+    />
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#121212"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 76.94 46.534)"
+    />
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#121212"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 128.424 46.535)"
+    />
+    <rect
+      width="9.631"
+      height="40.852"
+      fill="#121212"
+      rx="4.816"
+      transform="matrix(.87303 .48767 -.49721 .86763 94.957 67.304)"
+    />
+  </svg>
+);
+
+const CloudflareWorkers = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 231" preserveAspectRatio="xMidYMid">
+    <defs>
+      <linearGradient
+        id="cloudflare_workers__a"
+        x1="50%"
+        x2="25.7%"
+        y1="100%"
+        y2="8.7%"
+      >
+        <stop offset="0%" stopColor="#EB6F07" />
+        <stop offset="100%" stopColor="#FAB743" />
+      </linearGradient>
+      <linearGradient
+        id="cloudflare_workers__b"
+        x1="81%"
+        x2="40.5%"
+        y1="83.7%"
+        y2="29.5%"
+      >
+        <stop offset="0%" stopColor="#D96504" />
+        <stop offset="100%" stopColor="#D96504" stopOpacity="0" />
+      </linearGradient>
+      <linearGradient
+        id="cloudflare_workers__c"
+        x1="42%"
+        x2="84%"
+        y1="8.7%"
+        y2="79.9%"
+      >
+        <stop offset="0%" stopColor="#EB6F07" />
+        <stop offset="100%" stopColor="#EB720A" stopOpacity="0" />
+      </linearGradient>
+      <linearGradient
+        id="cloudflare_workers__d"
+        x1="50%"
+        x2="25.7%"
+        y1="100%"
+        y2="8.7%"
+      >
+        <stop offset="0%" stopColor="#EE6F05" />
+        <stop offset="100%" stopColor="#FAB743" />
+      </linearGradient>
+      <linearGradient
+        id="cloudflare_workers__e"
+        x1="-33.2%"
+        x2="91.7%"
+        y1="100%"
+        y2="0%"
+      >
+        <stop offset="0%" stopColor="#D96504" stopOpacity=".8" />
+        <stop offset="49.8%" stopColor="#D96504" stopOpacity=".2" />
+        <stop offset="100%" stopColor="#D96504" stopOpacity="0" />
+      </linearGradient>
+      <linearGradient
+        id="cloudflare_workers__f"
+        x1="50%"
+        x2="25.7%"
+        y1="100%"
+        y2="8.7%"
+      >
+        <stop offset="0%" stopColor="#FFA95F" />
+        <stop offset="100%" stopColor="#FFEBC8" />
+      </linearGradient>
+      <linearGradient
+        id="cloudflare_workers__g"
+        x1="8.1%"
+        x2="96.5%"
+        y1="1.1%"
+        y2="48.8%"
+      >
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".5" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity=".1" />
+      </linearGradient>
+      <linearGradient
+        id="cloudflare_workers__h"
+        x1="-13.7%"
+        x2="100%"
+        y1="104.2%"
+        y2="46.2%"
+      >
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".5" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity=".1" />
+      </linearGradient>
+    </defs>
+    <path
+      fill="url(#cloudflare_workers__a)"
+      d="m65.82 3.324 30.161 54.411-27.698 49.857a16.003 16.003 0 0 0 0 15.573l27.698 49.98-30.16 54.411a32.007 32.007 0 0 1-13.542-12.74L4.27 131.412a32.13 32.13 0 0 1 0-32.007l48.01-83.403a32.007 32.007 0 0 1 13.542-12.68Z"
+    />
+    <path
+      fill="url(#cloudflare_workers__b)"
+      d="M68.283 107.654a16.003 16.003 0 0 0 0 15.51l27.698 49.98-30.16 54.412a32.007 32.007 0 0 1-13.542-12.74L4.27 131.412c-3.816-6.586 17.542-14.465 64.014-23.698v-.061Z"
+      opacity=".7"
+    />
+    <path
+      fill="url(#cloudflare_workers__c)"
+      d="m68.898 8.802 27.083 48.933-4.493 7.818-23.882-40.44c-6.894-11.264-17.42-5.416-30.591 17.358l1.97-3.386 13.294-23.082a32.007 32.007 0 0 1 13.419-12.68l3.139 5.479h.061Z"
+      opacity=".5"
+    />
+    <path
+      fill="url(#cloudflare_workers__d)"
+      d="m203.696 16.003 48.01 83.403c5.725 9.848 5.725 22.159 0 32.007l-48.01 83.402a32.007 32.007 0 0 1-27.698 16.004h-48.01l59.705-107.654a16.003 16.003 0 0 0 0-15.511L127.988 0h48.01a32.007 32.007 0 0 1 27.698 16.003Z"
+    />
+    <path
+      fill="url(#cloudflare_workers__e)"
+      d="m173.536 230.45-47.395.43 57.367-108.208a16.619 16.619 0 0 0 0-15.634L126.14 0h10.834l60.197 106.546a16.619 16.619 0 0 1-.062 16.496 9616.838 9616.838 0 0 0-38.592 67.707c-11.695 20.558-6.648 33.791 15.018 39.7Z"
+    />
+    <path
+      fill="url(#cloudflare_workers__f)"
+      d="M79.978 230.819c-4.924 0-9.849-1.17-14.157-3.263l59.212-106.792a11.045 11.045 0 0 0 0-10.71L65.821 3.324A32.007 32.007 0 0 1 79.978 0h48.01l59.705 107.654a16.003 16.003 0 0 1 0 15.51L127.988 230.82h-48.01Z"
+    />
+    <path
+      fill="url(#cloudflare_workers__g)"
+      d="M183.508 110.054 122.448 0h5.54l59.705 107.654a16.003 16.003 0 0 1 0 15.51L127.988 230.82h-5.54l61.06-110.055a11.045 11.045 0 0 0 0-10.71Z"
+      opacity=".6"
+    />
+    <path
+      fill="url(#cloudflare_workers__h)"
+      d="M125.033 110.054 65.821 3.324c1.846-.985 4.062-1.724 6.155-2.34 13.049 23.452 32.315 59.029 57.859 106.67a16.003 16.003 0 0 1 0 15.51L71.053 229.589c-2.093-.616-3.201-1.047-5.17-1.97l59.089-106.792a11.045 11.045 0 0 0 0-10.71l.061-.062Z"
+      opacity=".6"
+    />
+  </svg>
+);
+
+const Cloudflare = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 116" preserveAspectRatio="xMidYMid">
+    <path
+      fill="#FFF"
+      d="m202.357 49.394-5.311-2.124C172.085 103.434 72.786 69.289 66.81 85.997c-.996 11.286 54.227 2.146 93.706 4.059 12.039.583 18.076 9.671 12.964 24.484l10.069.031c11.615-36.209 48.683-17.73 50.232-29.68-2.545-7.857-42.601 0-31.425-35.497Z"
+    />
+    <path
+      fill="#F4811F"
+      d="M176.332 108.348c1.593-5.31 1.062-10.622-1.593-13.809-2.656-3.187-6.374-5.31-11.154-5.842L71.17 87.634c-.531 0-1.062-.53-1.593-.53-.531-.532-.531-1.063 0-1.594.531-1.062 1.062-1.594 2.124-1.594l92.946-1.062c11.154-.53 22.839-9.56 27.087-20.182l5.312-13.809c0-.532.531-1.063 0-1.594C191.203 20.182 166.772 0 138.091 0 111.535 0 88.697 16.995 80.73 40.896c-5.311-3.718-11.684-5.843-19.12-5.31-12.747 1.061-22.838 11.683-24.432 24.43-.531 3.187 0 6.374.532 9.56C16.996 70.107 0 87.103 0 108.348c0 2.124 0 3.718.531 5.842 0 1.063 1.062 1.594 1.594 1.594h170.489c1.062 0 2.125-.53 2.125-1.594l1.593-5.842Z"
+    />
+    <path
+      fill="#FAAD3F"
+      d="M205.544 48.863h-2.656c-.531 0-1.062.53-1.593 1.062l-3.718 12.747c-1.593 5.31-1.062 10.623 1.594 13.809 2.655 3.187 6.373 5.31 11.153 5.843l19.652 1.062c.53 0 1.062.53 1.593.53.53.532.53 1.063 0 1.594-.531 1.063-1.062 1.594-2.125 1.594l-20.182 1.062c-11.154.53-22.838 9.56-27.087 20.182l-1.063 4.78c-.531.532 0 1.594 1.063 1.594h70.108c1.062 0 1.593-.531 1.593-1.593 1.062-4.25 2.124-9.03 2.124-13.81 0-27.618-22.838-50.456-50.456-50.456"
+    />
+  </svg>
+);
+
+const Gemini = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 296 298" fill="none">
+    <mask
+      id="gemini__a"
+      width="296"
+      height="298"
+      x="0"
+      y="0"
+      maskUnits="userSpaceOnUse"
+      style={{ maskType: "alpha" }}
+    >
+      <path
+        fill="#3186FF"
+        d="M141.201 4.886c2.282-6.17 11.042-6.071 13.184.148l5.985 17.37a184.004 184.004 0 0 0 111.257 113.049l19.304 6.997c6.143 2.227 6.156 10.91.02 13.155l-19.35 7.082a184.001 184.001 0 0 0-109.495 109.385l-7.573 20.629c-2.241 6.105-10.869 6.121-13.133.025l-7.908-21.296a184 184 0 0 0-109.02-108.658l-19.698-7.239c-6.102-2.243-6.118-10.867-.025-13.132l20.083-7.467A183.998 183.998 0 0 0 133.291 26.28l7.91-21.394Z"
+      />
+    </mask>
+    <g mask="url(#gemini__a)">
+      <g filter="url(#gemini__b)">
+        <ellipse cx="163" cy="149" fill="#3689FF" rx="196" ry="159" />
+      </g>
+      <g filter="url(#gemini__c)">
+        <ellipse cx="33.5" cy="142.5" fill="#F6C013" rx="68.5" ry="72.5" />
+      </g>
+      <g filter="url(#gemini__d)">
+        <ellipse cx="19.5" cy="148.5" fill="#F6C013" rx="68.5" ry="72.5" />
+      </g>
+      <g filter="url(#gemini__e)">
+        <path
+          fill="#FA4340"
+          d="M194 10.5C172 82.5 65.5 134.333 22.5 135L144-66l50 76.5Z"
+        />
+      </g>
+      <g filter="url(#gemini__f)">
+        <path
+          fill="#FA4340"
+          d="M190.5-12.5C168.5 59.5 62 111.333 19 112L140.5-89l50 76.5Z"
+        />
+      </g>
+      <g filter="url(#gemini__g)">
+        <path
+          fill="#14BB69"
+          d="M194.5 279.5C172.5 207.5 66 155.667 23 155l121.5 201 50-76.5Z"
+        />
+      </g>
+      <g filter="url(#gemini__h)">
+        <path
+          fill="#14BB69"
+          d="M196.5 320.5C174.5 248.5 68 196.667 25 196l121.5 201 50-76.5Z"
+        />
+      </g>
+    </g>
+    <defs>
+      <filter
+        id="gemini__b"
+        width="464"
+        height="390"
+        x="-69"
+        y="-46"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_69_17998"
+          stdDeviation="18"
+        />
+      </filter>
+      <filter
+        id="gemini__c"
+        width="265"
+        height="273"
+        x="-99"
+        y="6"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_69_17998"
+          stdDeviation="32"
+        />
+      </filter>
+      <filter
+        id="gemini__d"
+        width="265"
+        height="273"
+        x="-113"
+        y="12"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_69_17998"
+          stdDeviation="32"
+        />
+      </filter>
+      <filter
+        id="gemini__e"
+        width="299.5"
+        height="329"
+        x="-41.5"
+        y="-130"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_69_17998"
+          stdDeviation="32"
+        />
+      </filter>
+      <filter
+        id="gemini__f"
+        width="299.5"
+        height="329"
+        x="-45"
+        y="-153"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_69_17998"
+          stdDeviation="32"
+        />
+      </filter>
+      <filter
+        id="gemini__g"
+        width="299.5"
+        height="329"
+        x="-41"
+        y="91"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_69_17998"
+          stdDeviation="32"
+        />
+      </filter>
+      <filter
+        id="gemini__h"
+        width="299.5"
+        height="329"
+        x="-39"
+        y="132"
+        colorInterpolationFilters="sRGB"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feGaussianBlur
+          result="effect1_foregroundBlur_69_17998"
+          stdDeviation="32"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+const Stripe = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} fill="none" viewBox="100 100 312 312">
+    <path
+      fill="#533afd"
+      fillRule="evenodd"
+      d="m120 392 272-57.683V120l-272 58.357z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const Dart = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 256 256" preserveAspectRatio="xMidYMid">
+    <defs>
+      <radialGradient
+        id="dart__a"
+        cx="50%"
+        cy="50.002%"
+        r="50.004%"
+        fx="50%"
+        fy="50.002%"
+        gradientTransform="matrix(1 0 0 .99985 0 0)"
+      >
+        <stop offset="0%" stopColor="#FFF" stopOpacity=".1" />
+        <stop offset="100%" stopColor="#FFF" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+    <path
+      fill="#01579B"
+      d="M52.209 203.791 8.413 159.995C3.218 154.67 0 147.141 0 139.782c0-3.407 1.92-8.733 3.369-11.782l40.427-84.204 8.413 159.995Z"
+    />
+    <path
+      fill="#40C4FF"
+      d="M202.116 52.209 158.32 8.413C154.5 4.573 146.538 0 139.8 0c-5.796 0-11.48 1.167-15.15 3.369L43.815 43.796l158.301 8.413ZM104.418 256h106.111v-45.471l-79.16-25.276-72.422 25.276z"
+    />
+    <path
+      fill="#29B6F6"
+      d="M43.796 180.209c0 13.513 1.694 16.826 8.413 23.582l6.738 6.738h151.582l-74.097-84.204-92.636-82.53V180.21Z"
+    />
+    <path
+      fill="#01579B"
+      d="M178.534 43.777H43.796L210.529 210.51H256V106.093L202.097 52.19c-7.566-7.585-14.285-8.413-23.563-8.413Z"
+    />
+    <path
+      fill="#FFF"
+      d="M53.903 205.466c-6.738-6.756-8.413-13.419-8.413-25.257V45.47l-1.675-1.675v136.413c-.02 11.838-.02 15.113 10.088 25.257l5.044 5.044-5.044-5.044Z"
+      opacity=".2"
+    />
+    <path
+      fill="#263238"
+      d="M254.325 104.418v104.417h-45.471l1.675 1.694H256V106.093z"
+      opacity=".2"
+    />
+    <path
+      fill="#FFF"
+      d="M202.116 52.209c-8.356-8.357-15.188-8.413-25.257-8.413H43.815l1.675 1.675h131.369c5.025 0 17.71-.847 25.257 6.738Z"
+      opacity=".2"
+    />
+    <path
+      fill="url(#dart__a)"
+      d="m254.325 104.418-52.209-52.21L158.32 8.414C154.5 4.573 146.538 0 139.8 0c-5.796 0-11.48 1.167-15.15 3.369L43.815 43.796 3.388 128c-1.45 3.068-3.37 8.394-3.37 11.782 0 7.359 3.238 14.868 8.414 20.213l40.351 40.07c.96 1.185 2.09 2.39 3.426 3.726l1.675 1.675 5.044 5.044 43.796 43.796 1.675 1.675H210.49v-45.47h45.471V106.092l-1.637-1.675Z"
+      opacity=".2"
+    />
+  </svg>
+);
+
 export {
   TypeScript,
   JavaScript,
@@ -677,4 +1257,17 @@ export {
   Astro,
   Hono,
   Nextjs,
+  Vercel,
+  BetterAuth,
+  MongoDB,
+  PostgreSQL,
+  Flutter,
+  TailwindCSS,
+  Zod,
+  DrizzleORM,
+  CloudflareWorkers,
+  Cloudflare,
+  Gemini,
+  Stripe,
+  Dart,
 };

@@ -1,141 +1,126 @@
 "use client";
 
-import {
-  IconHome,
-  IconShoppingBag,
-  IconTerminal2,
-  IconUserCircle,
-} from "@tabler/icons-react";
 import { Button } from "./animate-ui/components/buttons/button";
 import { ThemeTogglerButton } from "./animate-ui/components/buttons/theme-toggler";
-import { usePathname } from "next/navigation";
+import { LanguageSwitcher } from "./language-switcher";
+import { useDictionary } from "./locale-provider";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
-const navigation = [
-  {
-    name: "Home",
-    href: "/",
-    icon: <IconHome className="size-[22] md:size-[26]" />,
-  },
-  {
-    name: "About",
-    href: "/about",
-    icon: <IconUserCircle className="size-[22] md:size-[26]" />,
-  },
-  {
-    name: "Projects",
-    href: "/projects",
-    icon: <IconTerminal2 className="size-[22] md:size-[26]" />,
-  },
-  // {
-  //   name: "Products",
-  //   href: "/products",
-  //   icon: <IconShoppingBag className="size-[22] md:size-[26]" />,
-  // },
-];
-
 export const Header = () => {
+  const dictionary = useDictionary();
   const [menuState, setMenuState] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const navigation = [
+    { name: dictionary.nav.home, href: "/" },
+    { name: dictionary.nav.about, href: "/about" },
+    { name: dictionary.nav.projects, href: "/projects" },
+  ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMenuState(false);
+  }, [pathname]);
+
   return (
     <header>
       <nav
-        data-state={menuState && "active"}
-        className="fixed z-20 w-full px-2"
+        data-state={menuState ? "active" : undefined}
+        className="fixed inset-x-0 top-0 z-20 px-3 pt-3"
       >
         <div
           className={cn(
-            "mx-auto mt-2 w-full md:w-4xl px-6 transition-all duration-300 lg:px-12",
-            isScrolled &&
-              "bg-background/50 w-full md:w-4xl rounded-2xl border backdrop-blur-lg lg:px-5",
+            "mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-2xl px-4 py-3 transition-all duration-300 md:px-6",
+            isScrolled || menuState
+              ? "border border-neutral-200/80 bg-[#f8f8ff]/80 shadow-sm backdrop-blur-xl dark:border-neutral-800 dark:bg-neutral-950/80"
+              : "bg-transparent",
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-            <div className="flex w-full justify-between lg:w-auto">
-              <Link
-                href="/#"
-                aria-label="home"
-                className="flex items-center space-x-2"
-              >
-                <span className="text-lg font-bold">Mike Balderas</span>
-              </Link>
+          <Link href="/" className="text-base font-semibold tracking-tight">
+            Mike Balderas
+          </Link>
 
-              <button
-                onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-              >
-                <Menu className="m-auto size-6 duration-200 in-data-[state=active]:scale-0 in-data-[state=active]:rotate-180 in-data-[state=active]:opacity-0" />
-                <X className="absolute inset-0 m-auto size-6 scale-0 -rotate-180 opacity-0 duration-200 in-data-[state=active]:scale-100 in-data-[state=active]:rotate-0 in-data-[state=active]:opacity-100" />
-              </button>
-            </div>
-
-            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <ul className="flex gap-8 text-sm">
-                {navigation.map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.href}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                    >
-                      <span>{item.name}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-background mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 in-data-[state=active]:block md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none lg:in-data-[state=active]:flex dark:shadow-none dark:lg:bg-transparent">
-              <div className="lg:hidden">
-                <ul className="space-y-6 text-base">
-                  {navigation.map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                      >
-                        <span>{item.name}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <ThemeTogglerButton variant="ghost" />
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="mailto:contact@interscode.com">
-                    <span>Contact me</span>
+          <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 lg:flex">
+            {navigation.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "text-sm transition-colors",
+                      active
+                        ? "font-medium text-foreground"
+                        : "text-neutral-500 hover:text-foreground",
+                    )}
+                  >
+                    {item.name}
                   </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
-                >
-                  <Link href="#">
-                    <span>Contact me</span>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="hidden items-center gap-2 lg:flex">
+            <LanguageSwitcher />
+            <ThemeTogglerButton variant="ghost" />
+            <Button asChild size="sm">
+              <a href="mailto:mikebalderassanchez@gmail.com">
+                {dictionary.nav.contact}
+              </a>
+            </Button>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setMenuState((v) => !v)}
+            aria-label={
+              menuState ? dictionary.nav.closeMenu : dictionary.nav.openMenu
+            }
+            className="relative z-20 -m-2 p-2 lg:hidden"
+          >
+            {menuState ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
+
+        {menuState ? (
+          <div className="mx-auto mt-2 max-w-5xl rounded-2xl border border-neutral-200/80 bg-[#f8f8ff]/95 p-5 shadow-lg backdrop-blur-xl lg:hidden dark:border-neutral-800 dark:bg-neutral-950/95">
+            <ul className="space-y-4">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block text-base font-medium"
+                  >
+                    {item.name}
                   </Link>
-                </Button>
-              </div>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-neutral-200 pt-4 dark:border-neutral-800">
+              <LanguageSwitcher />
+              <ThemeTogglerButton variant="ghost" />
+              <Button asChild size="sm" className="flex-1">
+                <a href="mailto:mikebalderassanchez@gmail.com">
+                  {dictionary.nav.contact}
+                </a>
+              </Button>
             </div>
           </div>
-        </div>
+        ) : null}
       </nav>
     </header>
   );

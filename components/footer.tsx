@@ -2,13 +2,16 @@
 
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 import { IconButton } from "./animate-ui/components/buttons/icon";
+import { useDictionary } from "./locale-provider";
 import { Title } from "./title";
 
 export function Footer() {
+  const { footer } = useDictionary();
+
   return (
-    <footer className="mt-10 mb-4">
-      <div className="mb-4 flex items-center justify-between px-4 py-4 md:px-8">
-        <Title>Follow me</Title>
+    <footer className="mt-20 border-t border-neutral-200/80 pt-10 dark:border-neutral-800">
+      <div className="mb-8 flex items-center justify-between gap-4">
+        <Title>{footer.follow}</Title>
         <div className="flex gap-2">
           <IconButton
             variant="outline"
@@ -38,12 +41,7 @@ export function Footer() {
           </IconButton>
         </div>
       </div>
-      <div className="flex-col items-center justify-center px-4 py-4 md:px-8">
-        <p className="text-center text-neutral-500">
-          Thanks for visiting my portfolio!
-        </p>
-        <p className="text-center text-neutral-500">Miguel Angel Balderas</p>
-      </div>
+      <p className="text-center text-sm text-neutral-500">{footer.thanks}</p>
     </footer>
   );
 }

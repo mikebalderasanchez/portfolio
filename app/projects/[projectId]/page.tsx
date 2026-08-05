@@ -1,62 +1,38 @@
-"use client";
+import { ProjectDetailView } from "./project-detail-view";
+import { localizeProject, projectBases } from "@/constants/projects";
+import { getDictionary } from "@/i18n/get-dictionary";
+import { getLocale } from "@/i18n/get-locale";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import { Footer } from "@/components/footer";
-import { Stickers } from "@/components/stickers";
-import { Title } from "@/components/title";
-import { projects } from "@/constants/projects";
-import { useParams } from "next/navigation";
+type PageProps = {
+  params: Promise<{ projectId: string }>;
+};
 
-export default function ProjectDetails() {
-  const { projectId } = useParams();
-  const project = projects.find((p) => p.id === projectId);
+export function generateStaticParams() {
+  return projectBases.map((project) => ({
+    projectId: project.id,
+  }));
+}
 
-  if (!project) {
-    return (
-      <main className="relative w-full">
-        <div className="animate-fade-in mx-auto mt-24 mb-4 w-full rounded-2xl p-6 md:w-4xl md:px-4 md:py-8">
-          <div className="md:px-8">
-            <Title>Project Not Found</Title>
-          </div>
-          <section className="mt-8 flex flex-col items-start gap-6 md:flex-row md:gap-20 md:px-8">
-            <p className="text-lg text-neutral-600">
-              The project you are looking for does not exist.
-            </p>
-          </section>
-          <Footer />
-        </div>
-        <Stickers />
-      </main>
-    );
-  }
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { projectId } = await params;
+  const locale = await getLocale();
+  const dictionary = getDictionary(locale);
+  const project = localizeProject(projectId, dictionary);
+  if (!project) return { title: dictionary.projectDetail.notFound };
+  return {
+    title: `${project.name} — Miguel Balderas`,
+    description: project.designation,
+  };
+}
 
-  return (
-    <main className="relative w-full">
-      <div className="animate-fade-in mx-auto mt-24 mb-4 w-full rounded-2xl p-6 md:w-4xl md:px-4 md:py-8">
-        <div className="md:px-8">
-          <Title>{project.name}</Title>
-          <p className=" text-neutral-600 mt-2">
-            {project.designation}
-          </p>
-        </div>
+export default async function ProjectDetailsPage({ params }: PageProps) {
+  const { projectId } = await params;
+  const exists = projectBases.some((p) => p.id === projectId);
+  if (!exists) notFound();
 
-        <section className="mt-4 flex flex-col items-start gap-2 md:px-8">
-          <p className="text-neutral-600">
-            {project.quote}
-          </p>
-          <p className="text-neutral-600">Tech stack</p>
-          <div className="mb-4 flex gap-2">
-            {project.techs.map((tech, index) => (
-              <div key={index}>{tech}</div>
-            ))}
-          </div>
-          <p className="text-neutral-600">Repositorio</p>
-          <a href={project.github} className="text-blue-500 hover:underline">
-            {project.github}
-          </a>
-        </section>
-        <Footer />
-      </div>
-      <Stickers />
-    </main>
-  );
+  return <ProjectDetailView />;
 }

@@ -1,49 +1,38 @@
+'use client';
+
 import { Footer } from "@/components/footer";
+import { useDictionary } from "@/components/locale-provider";
+import { ProjectCard } from "@/components/project-card";
+import { Reveal } from "@/components/motion/reveal";
+import { PageShell } from "@/components/page-shell";
 import { Title } from "@/components/title";
-import { Stickers } from "@/components/stickers";
-import { projects } from "@/constants/projects";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import Image from "next/image";
-import Link from "next/link";
+import { localizeProjects } from "@/constants/projects";
 
 export default function Projects() {
+  const dictionary = useDictionary();
+  const projects = localizeProjects(dictionary);
+
   return (
-    <main className="relative w-full">
-      <div className="relative mx-auto max-w-6xl">
-        <Stickers />
-      </div>
-      <div className="animate-fade-in mx-auto mt-24 mb-4 w-full rounded-2xl p-6 md:w-4xl">
-        <div className="md:px-8">
-          <Title>My projects</Title>
-        </div>
-        <section className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 px-0 md:px-8">
-          {projects.map((project) => (
-            <Link href={`/projects/${project.id}`} key={project.name}>
-              <Card className="gap-2 overflow-hidden bg-transparent p-0 transition-transform hover:scale-105">
-                <div className={`${project.color} w-full p-0`}>
-                  <Image
-                    src={project.src}
-                    alt={project.name}
-                    width={300}
-                    height={300}
-                    className="mx-auto size-40 object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <CardTitle className="mb-2 text-lg">{project.name}</CardTitle>
-                  <div className="mb-4 flex gap-2">
-                    {project.techs.map((tech, index) => (
-                      <div key={index}>{tech}</div>
-                    ))}
-                  </div>
-                  <CardDescription>{project.designation}</CardDescription>
-                </div>
-              </Card>
-            </Link>
+    <PageShell>
+      <Title>{dictionary.projectsPage.title}</Title>
+      <Reveal>
+        <h1 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
+          {dictionary.projectsPage.heading}
+        </h1>
+        <p className="mt-4 max-w-xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+          {dictionary.projectsPage.body}
+        </p>
+      </Reveal>
+
+      <section className="mt-10 md:mt-14">
+        <div className="border-b border-neutral-200 dark:border-neutral-800">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
-        </section>
-        <Footer />
-      </div>
-    </main>
+        </div>
+      </section>
+
+      <Footer />
+    </PageShell>
   );
 }

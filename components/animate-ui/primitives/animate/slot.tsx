@@ -58,27 +58,106 @@ function mergeProps<T extends HTMLElement>(
   return merged;
 }
 
+function isMotionCreatable(type: unknown): type is React.ElementType {
+  return (
+    typeof type === 'string' ||
+    typeof type === 'function' ||
+    (typeof type === 'object' && type !== null)
+  );
+}
+
+/** Motion-only props that must not be forwarded to non-motion DOM nodes. */
+const MOTION_PROP_KEYS = [
+  'animate',
+  'initial',
+  'exit',
+  'variants',
+  'whileHover',
+  'whileTap',
+  'whileFocus',
+  'whileDrag',
+  'whileInView',
+  'drag',
+  'dragConstraints',
+  'dragElastic',
+  'dragMomentum',
+  'dragTransition',
+  'dragPropagation',
+  'dragControls',
+  'dragListener',
+  'layout',
+  'layoutId',
+  'layoutDependency',
+  'layoutScroll',
+  'layoutRoot',
+  'transition',
+  'transformTemplate',
+  'transformValues',
+  'onAnimationStart',
+  'onAnimationComplete',
+  'onUpdate',
+  'onDrag',
+  'onDragStart',
+  'onDragEnd',
+  'onDirectionLock',
+  'onDragTransitionEnd',
+  'onHoverStart',
+  'onHoverEnd',
+  'onTap',
+  'onTapStart',
+  'onTapCancel',
+  'onPan',
+  'onPanStart',
+  'onPanEnd',
+  'onPanSessionStart',
+  'onViewportEnter',
+  'onViewportLeave',
+] as const;
+
+function stripMotionProps(props: AnyProps): AnyProps {
+  const rest = { ...props };
+  for (const key of MOTION_PROP_KEYS) {
+    delete rest[key];
+  }
+  return rest;
+}
+
 function Slot<T extends HTMLElement = HTMLElement>({
   children,
   ref,
   ...props
 }: SlotProps<T>) {
-  const isAlreadyMotion =
-    typeof children.type === 'object' &&
-    children.type !== null &&
-    isMotionComponent(children.type);
+  const childType = React.isValidElement(children) ? children.type : null;
 
-  const Base = React.useMemo(
-    () =>
-      isAlreadyMotion
-        ? (children.type as React.ElementType)
-        : motion.create(children.type as React.ElementType),
-    [isAlreadyMotion, children.type],
-  );
+  const isAlreadyMotion =
+    typeof childType === 'object' &&
+    childType !== null &&
+    isMotionComponent(childType);
+
+  const canCreateMotion = childType != null && isMotionCreatable(childType);
+
+  const Base = React.useMemo(() => {
+    if (!canCreateMotion || childType == null) return null;
+    return isAlreadyMotion
+      ? (childType as React.ElementType)
+      : motion.create(childType as React.ElementType);
+  }, [canCreateMotion, isAlreadyMotion, childType]);
 
   if (!React.isValidElement(children)) return null;
 
   const { ref: childRef, ...childProps } = children.props as AnyProps;
+
+  // Children created in a Server Component lose a usable `type` when passed
+  // into a Client Component — fall back to cloneElement without motion.create.
+  if (!Base) {
+    const safeProps = stripMotionProps(props as AnyProps);
+    const mergedProps = mergeProps(childProps, safeProps as DOMMotionProps<T>);
+
+    return React.cloneElement(children, {
+      ...mergedProps,
+      ref: mergeRefs(childRef as React.Ref<T>, ref),
+    } as AnyProps);
+  }
 
   const mergedProps = mergeProps(childProps, props);
 
